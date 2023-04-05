@@ -1,7 +1,9 @@
 package com.example.RESTful_Java_client.service;
 
 import com.example.RESTful_Java_client.entity.AccInfo;
+import com.example.RESTful_Java_client.entity.AccInfoTemp;
 import com.example.RESTful_Java_client.repository.AccInfoRepository;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +21,8 @@ public class AccInfoService {
         return repository.findAll();
     }
 
-    public String getAllAcc() {
-        return netClientGet.netClientGet();
+    public AccInfoTemp getAllAccInfo() throws JsonProcessingException {
+        return netClientGet.getAllAccInfo();
     }
 
 }

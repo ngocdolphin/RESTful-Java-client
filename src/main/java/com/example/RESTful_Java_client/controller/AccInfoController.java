@@ -1,7 +1,9 @@
 package com.example.RESTful_Java_client.controller;
 
 import com.example.RESTful_Java_client.entity.AccInfo;
+import com.example.RESTful_Java_client.entity.AccInfoTemp;
 import com.example.RESTful_Java_client.service.AccInfoService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +24,7 @@ public class AccInfoController {
     }
 
     @GetMapping("/final_exam")
-    public String getListAccFinalExam(){
-        return service.getAllAcc();
+    public AccInfoTemp getListAccFinalExam() throws JsonProcessingException {
+        return service.getAllAccInfo();
     }
 }
